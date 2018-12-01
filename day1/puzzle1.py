@@ -44,9 +44,7 @@ def has_duplicates(lst):
         return False
 
     else:
-        # Careful if more than one duplicate
-        if result.size > 1:
-            return True
+        return True
 
 
 inpt = clean
@@ -65,7 +63,8 @@ while not has_duplicates(result_frequency):
         break
 
 
-# Find the first frequency
+# At this point, result_frequency has at least one duplicate element
+# Find the first duplicate
 uniques = np.unique(result_frequency, return_index = True, return_counts = True)
 
 frequencies = uniques[0]
@@ -82,7 +81,6 @@ if result.size > 1:
     result = frequencies[pos]
 
 print("The first frequency that has a duplicate is " + str(result[0]) + ".")
-
 
 
 ## ----- REDDIT SOLUTION -----
