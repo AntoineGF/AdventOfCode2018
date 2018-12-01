@@ -3,7 +3,8 @@
 
 ## -----  PART ONE -----
 import os
-os.chdir('/Users/antoinegex-fabry/Desktop/AdventOfCode')
+path = 'your_path'
+os.chdir(path)
 
 import csv
 from itertools import chain
@@ -28,23 +29,23 @@ print(sum(clean))
 ## -----  PART TWO -----
 import numpy as np
 def has_duplicates(lst):
-    # Find the first frequency 
+    # Find the first frequency
     uniques = np.unique(lst, return_index = True, return_counts = True)
-    
+
     frequencies = uniques[0]
     # indexes = uniques[1]
     counts = uniques[2]
-    
+
     position = np.array([c == 2 for c in counts])
     result = frequencies[position]
-    
-    if result.size == 0: 
+
+    if result.size == 0:
         print("No duplicates found !")
-        return False 
-    
+        return False
+
     else:
         # Careful if more than one duplicate
-        if result.size > 1:         
+        if result.size > 1:
             return True
 
 
@@ -59,12 +60,12 @@ while not has_duplicates(result_frequency):
     new_inpt = np.append(result_frequency[len(result_frequency) - 1], inpt)
     result_bis = np.cumsum(new_inpt)[1:]
     result_frequency = np.append(result_frequency, result_bis)
-    
-    if i == maxit: 
+
+    if i == maxit:
         break
 
 
-# Find the first frequency 
+# Find the first frequency
 uniques = np.unique(result_frequency, return_index = True, return_counts = True)
 
 frequencies = uniques[0]
@@ -75,20 +76,23 @@ position = np.array([c > 1 for c in counts])
 result = frequencies[position]
 
 # Careful for first occurence
-if result.size > 1: 
+if result.size > 1:
     # Find the position of the smaller index
     pos = [idx == min(indexes[position]) for idx in indexes]
     result = frequencies[pos]
-    
+
 print("The first frequency that has a duplicate is " + str(result[0]) + ".")
-    
 
 
-## ----- REDDIT SOLUTION ----- 
+
+## ----- REDDIT SOLUTION -----
+
+# Task 1
 import itertools
 data = [int(x) for x in open("input1.txt").readlines()]
 print(sum(data))
 
+# Task 2
 freq = 0
 seen = set([0])
 for num in itertools.cycle(data):
@@ -96,14 +100,11 @@ for num in itertools.cycle(data):
     if freq in seen:
         print(freq); break
     seen.add(freq)
-    
+
 seen = set([0])
 freq = 0
-for num in itertools.cycle(data): 
-    freq = freq + num 
-    if freq in seen: 
+for num in itertools.cycle(data):
+    freq = freq + num
+    if freq in seen:
         print(freq); break
     seen.add(freq)
-        
-    
-    
