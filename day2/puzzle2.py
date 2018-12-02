@@ -1,10 +1,9 @@
-# suit
-# two similar box IDs
-
+# Exercise:
 # Scan the likely candidate boxes and count the number that have an ID containing
 # EXACTLY TWO OF ANY LETTER, and those containing EXACTLY THREE of any letter.
 # Multiply those two to get a checksum
 
+# ------------------------------------------------------------------------------
 import csv
 import os
 path = 'your_path'
