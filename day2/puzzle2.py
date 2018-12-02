@@ -58,7 +58,7 @@ check = [None]*len(data[0]) # 26 is length of a row in input.txt
 for row in data:
     print("Checking the " + str(i) +"th row.")
     letters_initial = [letter for letter in data[i]]
-    # Index to compare the rest of the data (not efficient)
+    # Index to compare the rest of the data (could probably be more efficient)
     for j in range(i + 1, len(data)):
         letters_compare = [letter for letter in data[j]]
         for pos in range(0, len(letters_initial)):
