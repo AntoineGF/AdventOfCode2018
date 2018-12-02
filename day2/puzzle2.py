@@ -71,12 +71,10 @@ for row in data:
             # print(letters_compare)
             print(data[i])
             print(data[j])
-            # If found, do not iterate over the remaining obsverations (hence the further breaks)
+            # If found, do not iterate over the remaining obsverations
             foundID = True
             break
-
-        if foundID:
-            break
+    # Break if found the two desired IDs. 
     if foundID:
         break
     # Use the next row and compare it with rest of data input
