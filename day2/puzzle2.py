@@ -74,8 +74,16 @@ for row in data:
             # If found, do not iterate over the remaining obsverations
             foundID = True
             break
-    # Break if found the two desired IDs. 
+    # Break if found the two desired IDs.
     if foundID:
         break
     # Use the next row and compare it with rest of data input
     i += 1
+
+# Store the common strings
+result = ''
+for idx in range(0, len(data[i])):
+    if check[idx]:
+        result += letters_initial[idx]
+
+print('The common string are: ' + result + '.')
