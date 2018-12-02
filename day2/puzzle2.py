@@ -53,6 +53,7 @@ print('RESULT: ' + str(total2 * total3))
 # Ex: What letters are common between the two correct box IDs?
 # data = ['abcde', 'fghij', 'vweyo', 'fguij']
 
+foundID = False
 i = 0
 check = [None]*len(data[0]) # 26 is length of a row in input.txt
 for row in data:
@@ -70,7 +71,13 @@ for row in data:
             # print(letters_compare)
             print(data[i])
             print(data[j])
+            # If found, do not iterate over the remaining obsverations (hence the further breaks)
+            foundID = True
             break
 
+        if foundID:
+            break
+    if foundID:
+        break
     # Use the next row and compare it with rest of data input
     i += 1
