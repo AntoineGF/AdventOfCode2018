@@ -3,10 +3,9 @@
 # EXACTLY TWO OF ANY LETTER, and those containing EXACTLY THREE of any letter.
 # Multiply those two to get a checksum
 
-# ------------------------------------------------------------------------------
-import csv
+# ----- PART ONE -----
 import os
-path = 'your_path'
+path = '/Users/antoinegex-fabry/Desktop/AdventOfCode2018/day2'
 os.chdir(path)
 
 # Read the data from the text file
@@ -48,3 +47,30 @@ print(str(total2) + ' boxes contain a letter which appears exactly twice.')
 print(str(total3) + ' boxes contain a letter which appears exactly three times.')
 print('Out of ' + str(len(data)) + ' Box IDs.')
 print('RESULT: ' + str(total2 * total3))
+
+## ----- PART TWO -----
+
+# Ex: What letters are common between the two correct box IDs?
+# data = ['abcde', 'fghij', 'vweyo', 'fguij']
+
+i = 0
+check = [None]*len(data[0]) # 26 is length of a row in input.txt
+for row in data:
+    print("Checking the " + str(i) +"th row.")
+    letters_initial = [letter for letter in data[i]]
+    # Index to compare the rest of the data (not efficient)
+    for j in range(i + 1, len(data)):
+        letters_compare = [letter for letter in data[j]]
+        for pos in range(0, len(letters_initial)):
+            check[pos] = ( letters_initial[pos] == letters_compare[pos] )
+
+        # If (len(letters) - 1) elements in common, it means that only one letter is different.
+        if sum(check) == len(letters_initial) - 1:
+            # print(letters_initial)
+            # print(letters_compare)
+            print(data[i])
+            print(data[j])
+            break
+
+    # Use the next row and compare it with rest of data input
+    i += 1
