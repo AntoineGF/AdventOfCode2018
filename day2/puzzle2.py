@@ -5,7 +5,7 @@
 
 # ----- PART ONE -----
 import os
-path = '/Users/antoinegex-fabry/Desktop/AdventOfCode2018/day2'
+path = 'your_path'
 os.chdir(path)
 
 # Read the data from the text file
