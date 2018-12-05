@@ -1,4 +1,4 @@
---- Day 2: Inventory Management System ---
+# Day 2: Inventory Management System ---
 
 You stop falling through time, catch your breath, and check the screen on the device. "Destination reached. Current Year: 1518. Current Location: North Pole Utility Closet 83N10." You made it! Now, to find those anomalies.
 
@@ -20,7 +20,7 @@ For example, if you see the following box IDs:
   * `abcdee` contains two e.
   * `ababab` contains three a and three b, but it only counts once.
 
-Of these box IDs, four of them contain a letter which appears exactly twice, and three of them contain a letter which appears exactly three times. Multiplying these together produces a checksum of 4 * 3 = 12.
+Of these box IDs, four of them contain a letter which appears exactly twice, and three of them contain a letter which appears exactly three times. Multiplying these together produces a checksum of `4 * 3 = 12`.
 
 __What is the checksum for your list of box IDs?__
 
@@ -39,6 +39,6 @@ fguij
 axcye
 wvxyz
 ```
-The IDs abcde and axcye are close, but they differ by two characters (the second and fourth). However, the IDs fghij and fguij differ by exactly one character, the third (h and u). Those must be the correct boxes.
+The IDs `abcde` and `axcye` are close, but they differ by two characters (the second and fourth). However, the IDs `fghij` and `fguij` differ by exactly one character, the third (h and u). Those must be the correct boxes.
 
-What letters are common between the two correct box IDs? (In the example above, this is found by removing the differing character from either ID, producing fgij.)
+What letters are common between the two correct box IDs? (In the example above, this is found by removing the differing character from either ID, producing `fgij`.)
